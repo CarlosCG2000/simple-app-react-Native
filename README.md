@@ -209,5 +209,7 @@ Si quieres especificarlo tú mismo:
 
 #### 3. `Mejorar` la aplicación...
 
+- Migrar de JavaScript a TypeScript en Expo
+
 // Llamar al médico para que me atienda y me vea los analisis.
 // Sacar sudadera negra.
