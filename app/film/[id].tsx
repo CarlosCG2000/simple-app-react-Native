@@ -4,12 +4,10 @@ import {Image, Text, View} from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { Screen } from "../../components/ScreenLayout";
 import { useEffect, useState } from "react";
-import { FilmDetails, getFilmDetails } from "../../lib/omdbapi";
+import { getFilmDetails } from "../../lib/omdbapi";
 import { styled } from "nativewind";
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
-const StyledImage = styled(Image);
+import { FilmDetails } from "../../class/FilmDetails";
+import { StyledImage, StyledText, StyledView } from "../../class/styled";
 
 export default function Detail(){
     const { id } = useLocalSearchParams(); // mismo que el nombre del archivo

@@ -3,10 +3,7 @@ import { Link } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { HomeIcon } from "../../components/Icons";
 import { Screen } from "../../components/ScreenLayout";
-import { styled } from "nativewind";
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
+import { StyledText } from "../../class/styled";
 
 export default function About() {
     return (

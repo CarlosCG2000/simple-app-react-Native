@@ -3,11 +3,8 @@ import { View, StyleSheet, Text, Image, Animated, Pressable } from "react-native
 import { Score } from "./Score";
 import { Link } from "expo-router";
 import { styled } from "nativewind";
-import { Film } from "../lib/omdbapi";
-
-const StyledPressable = styled(Pressable);
-const StyledView = styled(View);
-const StyledText = styled(Text);
+import { Film } from "../class/Film";
+import { StyledPressable, StyledText, StyledView } from "../class/styled";
 
 type FilmCardProps = {
   film: Film;
@@ -34,7 +31,6 @@ type AnimatedFilmCardProps = {
   film: Film;
   index: number;
 };
-
 
 export function AnimatedFilmCard({ film, index }: AnimatedFilmCardProps){
   const opacity = useRef(new Animated.Value(0)).current; // Inicializa la opacidad en 0 (es decir transparente)

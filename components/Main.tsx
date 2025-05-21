@@ -7,10 +7,10 @@ import {
   StyleSheet,
   Pressable,
 } from "react-native";
-import { Film, getFilms } from "../lib/omdbapi";
-import { getFilmsMock } from "../lib/omdbapi";
+import { getFilms, getFilmsMock } from "../lib/omdbapi";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedFilmCard } from "./FilmCard";
+import { Film } from "../class/Film";
 
 export function Main() {
   const [films, setFilms] = useState<Film[]>([]); // Inicializa el estado de films como un array vacío con useState es reactivo

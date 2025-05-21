@@ -1,8 +1,6 @@
 import { styled } from "nativewind";
 import { Text, View } from "react-native";
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
+import { StyledText, StyledView } from "../../class/styled";
 
 export default function index() {
     return (

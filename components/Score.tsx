@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 import { styled } from 'nativewind';
-
+import { StyledText, StyledView } from '../class/styled';
 
 class ScoreProps {
     score: number;
@@ -10,9 +10,6 @@ class ScoreProps {
         this.maxScore = maxScore;
     }
 }
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
 
 export function Score( score: ScoreProps) {
     //Obtener el color de forma dinamica de la puntuacion para el circulo

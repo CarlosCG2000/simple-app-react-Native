@@ -1,10 +1,9 @@
-import { View, Text, Pressable } from "react-native";
+import { Pressable } from "react-native";
 import { Link, Slot, Stack } from "expo-router";
 import { LogoMarvel } from "../components/Logos";
 import { InfoIcon } from "../components/Icons";
 import { styled } from "nativewind";
-
-const StyledView = styled(View);
+import { StyledView } from "../class/styled";
 
 export default function Layout() {
     return (

@@ -1,26 +1,7 @@
+import { Film } from "../class/Film";
+import { FilmDetails } from "../class/FilmDetails";
 import mockFilms from "./films.json"; // Si estás usando un bundler moderno (Webpack 5+)
 // const mockFilms = require("./films.json");  // Si estás usando un bundler más antiguo (Webpack 4 o inferior)
-
-export class Film {
-  title: string;
-  year: string;
-  id: string;
-  type: string;
-  poster: string;
-  score: number;
-
-  constructor(data: {
-    Title: string; Year: string; imdbID: string;
-    Type: string; Poster: string;
-  }) {
-    this.title = data.Title;
-    this.year = data.Year;
-    this.id = data.imdbID;
-    this.type = data.Type;
-    this.poster = data.Poster;
-    this.score = 80 // Math.floor(Math.random() * 100) + 1; // Generar un score aleatorio entre 1 y 100
-  }
-}
 
 export async function getFilms(): Promise<Film[]> { // al ser async devuelve un Promise
 
@@ -73,30 +54,6 @@ export async function getFilmsMock(): Promise<Film[]> {
     return [];
   }
 
-}
-
-export class FilmDetails {
-    title: string;
-    plot: string;
-    poster: string;
-    ratings: Array<{ Source: string; Value: string }>;
-    metascore: string;
-    id: string;
-    // Year, Released, Runtime, Genre, Director, Writer,
-    // Actors, Language, Country, Awards, imdbRating,
-    // imdbVotes, Type, BoxOffice
-
-    constructor(title: string, plot: string, poster: string,
-                ratings: Array<{ Source: string; Value: string }>,
-                metascore: string, id: string
-    ) {
-      this.title = title;
-      this.plot = plot;
-      this.poster = poster;
-      this.ratings = ratings;
-      this.metascore = metascore;
-      this.id = id;
-    }
 }
 
 export async function getFilmDetails(slug: string): Promise<FilmDetails | null > {
