@@ -2,10 +2,13 @@ import { View, Text, Pressable } from "react-native";
 import { Link, Slot, Stack } from "expo-router";
 import { LogoMarvel } from "../components/Logos";
 import { InfoIcon } from "../components/Icons";
+import { styled } from "nativewind";
+
+const StyledView = styled(View);
 
 export default function Layout() {
     return (
-        <View className="flex-1">
+        <StyledView className="flex-1">
             {/* <Text className="text-white text-2xl">Hola</Text> */}
             <Stack
             screenOptions={{
@@ -26,7 +29,7 @@ export default function Layout() {
                         </Link>
                 ),
             }}/>
-        </View>
+        </StyledView>
     );
 }
 

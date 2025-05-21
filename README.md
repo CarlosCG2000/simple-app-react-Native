@@ -69,6 +69,8 @@ Lo primero que nos damos cuenta de que no nos permite la opción de `web`, esa o
 10. `npm install @expo/vector-icons`, añadir iconos. Luego a través de `https://icons.expo.fyi/Index` se pueden seleccionar.
     Cuando usemos muchos iconos lo recomendable es crear un archivo `Icons.jsx` donde importemos todos los iconos que queramos (recomendable solo usar un tipo de iconos).
 
+11. `npx expo install expo-font`, para solucionar problemas que puede dar `npm install @expo/vector-icons` (punto 10.)
+
 ### Componentes del proyecto.
 
 - `View`: la vista es como un <div> para cualquier bloque que queramos poner con la diferencia de que los elementos View son `display flex` por defecto.
@@ -210,6 +212,7 @@ Si quieres especificarlo tú mismo:
 #### 3. `Mejorar` la aplicación...
 
 - Migrar de JavaScript a TypeScript en Expo
+  `npm install --save-dev typescript @types/react @types/react-native`
 
-// Llamar al médico para que me atienda y me vea los analisis.
-// Sacar sudadera negra.
+- Resto de tareas
+  // Sacar sudadera negra.

@@ -7,14 +7,14 @@ import {
   StyleSheet,
   Pressable,
 } from "react-native";
-import { getFilms } from "../lib/omdbapi";
+import { Film, getFilms } from "../lib/omdbapi";
 import { getFilmsMock } from "../lib/omdbapi";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedFilmCard } from "./FilmCard";
 
 export function Main() {
-  const [films, setFilms] = useState([]); // Inicializa el estado de films como un array vacío con useState es reactivo
-  const insets = useSafeAreaInsets(); // Obtiene los insets de la barra de estado y la barra de navegación
+  const [films, setFilms] = useState<Film[]>([]); // Inicializa el estado de films como un array vacío con useState es reactivo
+  // const insets = useSafeAreaInsets(); // Obtiene los insets de la barra de estado y la barra de navegación
 
   useEffect(() => { // Se ejecuta una vez al montar el componente
     getFilms().then((films) => { // Llama a la función getFilmsMock para obtener los datos de las películas
@@ -34,7 +34,7 @@ export function Main() {
       ) : (
         <FlatList
           data={films}
-          keyExtractor={(film) => film.slug}
+          keyExtractor={(film) => film.id}
           contentContainerStyle={{ paddingHorizontal: 0 }}
           renderItem={({ item, index }) => (
             <AnimatedFilmCard film={item} index={index} />
