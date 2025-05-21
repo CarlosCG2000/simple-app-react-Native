@@ -101,6 +101,8 @@ Datos obtenidos de API de `OMDb API` [https://www.omdbapi.com/]. Es una API dond
 
 ### Esquema del proyecto.
 
+![Esquema del proyecto](public/esquema.png)
+
 - `Package.json`
 - `Tailwind.config.js`
 - `Babel.config.js`
@@ -179,8 +181,7 @@ Si quieres especificarlo tú mismo:
 
 #### 3. `Mejorar` la aplicación...
 
-// Trancribir respuesta de la duda 1 de js y jsx,
-// Subir a Github proyecto iniciado.
+// Trancribir respuesta de la duda 1 de js y jsx.
 // Freeform crear el esquema bonito.
 // Ir a la duda 3. y realizarlo todo practico.
 
