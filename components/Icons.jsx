@@ -1,6 +1,8 @@
 
 import Entypo from '@expo/vector-icons/Entypo';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
 import Svg, { Path } from 'react-native-svg';
 
 export const HomeIcon = (props) => (
@@ -9,6 +11,10 @@ export const HomeIcon = (props) => (
 
 export const InfoIcon = (props) => (
 <AntDesign name="infocirlce" size={32} color="white" {...props} />
+)
+
+export const ListIcon = (props) => (
+    <FontAwesome name="th-list" size={24} color="white" {...props}  />
 )
 
 export const SvgIcon = (props) => (

@@ -126,9 +126,37 @@ Datos obtenidos de API de `OMDb API` [https://www.omdbapi.com/]. Es una API dond
 
 #### 1. ¿Cuando usar ficheros `js` o `jsx`?
 
+La diferencia entre usar archivos .js o .jsx depende principalmente del contenido del archivo y de si estás utilizando JSX (JavaScript XML) dentro de él. Aquí te lo explico claramente: JSX es una extensión de JavaScript que te permite escribir componentes como si fueran HTML.
+
+```jsx
+export default function Hola() {
+  return <Text>Hola Mundo</Text>;
+}
+```
+
+Este tipo de sintaxis solo funciona si el transpilador (Babel) sabe que el archivo contiene JSX. Por eso .jsx existe
+
+- Cuándo usar .jsx
+  Usa la extensión .jsx cuando el archivo:
+  • Contiene JSX (como <View>, <Text>, <Component />)
+  • Define componentes visuales (pantallas, vistas, layouts, etc.)
+  • Es parte de la UI de la app
+
+- Cuándo usar .js
+  Usa la extensión .js cuando el archivo:
+  • No contiene JSX
+  • Contiene lógica de negocio, funciones utilitarias, constantes, hooks, API clients, etc.
+  • No renderiza nada visual
+
+* ¿Y si todo funciona con .js igual?
+  Sí, muchos proyectos (sobre todo con Babel configurado) funcionan aunque pongas JSX en archivos .js, pero no es buena práctica, porque:
+  • No se detecta bien en editores o linters
+  • Algunas herramientas de análisis pueden fallar
+  • Puede confundir a otros devs que esperan que .js sea solo JS
+
 #### 2. ¿Cual es el `punto de entrada` de mi aplicación? (si borro el `index.js`, me da error)
 
-Estás usando Expo Router, lo cual cambia por completo cómo funciona el punto de entrada de tu aplicación. No usas directamente index.js como en un proyecto clásico de React. Te explico cómo se organiza todo:
+Estás usando Expo Router, lo cual cambia por completo cómo funciona el punto de entrada de tu aplicación. No usas directamente `index.js` como en un proyecto clásico de React. Te explico cómo se organiza todo:
 
 ```json
 "main": "expo-router/entry" // Esto le dice a Expo que use Expo Router, que convierte la estructura de carpetas en rutas automáticas.
@@ -146,7 +174,7 @@ Estás usando Expo Router, lo cual cambia por completo cómo funciona el punto d
 3. Si estás en `/`, entra al layout `app/(tabs)/\_layout.js` y renderiza tus tabs (`app.js, about.js, etc.`).
 4. `index.js` es el fallback (pantalla por defecto) si no se indica `una ruta específica`.
 
-- ¿Dónde está expo-router/entry.js?
+- ¿Dónde está `expo-router/entry.js`?
   No lo vas a ver en tu proyecto. Es un módulo interno de expo-router, así que no necesitas crearlo ni tocarlo. Ese archivo “invisible” configura y carga tu estructura de carpetas como rutas. Solo se referencia en tu `package.json:`
 
 ```json
@@ -166,25 +194,20 @@ Sí, está bien. Depende del tipo de navegación que estés creando:
 
 Si quieres especificarlo tú mismo:
 
+⚠️ `initialRouteName` no tiene efecto en `expo-router`, siempre se necesita un `index.jsx`. ⚠️
+
 ```tsx
-<Tabs
-  initialRouteName="app" // <- Aquí defines qué ruta/tab es la "default"
->
+<Tabs initialRouteName="app">
   <Tabs.Screen name="app" options={{ title: "Inicio" }} />
   <Tabs.Screen name="about" options={{ title: "Sobre el proyecto" }} />
 </Tabs>
 ```
 
 - ¿Y si quiero eliminar `index.js`?
-  Puedes hacerlo siempre que definas initialRouteName en el Tabs, como te acabo de enseñar arriba.
+  Puedes hacerlo siempre que definas `initialRouteName` en el `Tabs`, como te acabo de enseñar arriba.
   Si no pones `initialRouteName`, expo-router usará `index.js` automáticamente. Por eso, si lo borras sin definir esa opción, da error.
 
 #### 3. `Mejorar` la aplicación...
 
-// Trancribir respuesta de la duda 1 de js y jsx.
-// Freeform crear el esquema bonito.
-// Ir a la duda 3. y realizarlo todo practico.
-
-// Hablar con Alberto y comentarle lo del icono y subir TFM al moddle.
 // Llamar al médico para que me atienda y me vea los analisis.
 // Sacar sudadera negra.
