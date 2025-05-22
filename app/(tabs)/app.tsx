@@ -1,32 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-// import 'nativewind/tailwind.css';
-
-import { Main } from "../../components/Main";
-import { Screen } from "../../components/ScreenLayout";
+import { StyledText, StyledView } from "../../class/styled";
 
 export default function App() {
   return (
-    // SafeAreaProvider: Sirve para crear un contenedor seguro para la app a través de la librería react-native-safe-area-context
-    // StatusBar: Sirve para controlar la barra de estado de la app, de forma que se puede cambiar el color de fondo y el color del texto
-    <SafeAreaProvider>
-      <Screen>
-        {/* <View style={styles.container}> */}
-        <StatusBar style="light" />
-        <Main />
-        {/* </View> */}
-      </Screen>
-    </SafeAreaProvider>
+    <StyledView
+      /*style={styles.container}*/ className="flex-1 bg-black pt-4 px-2"
+    >
+      <StyledText className="text-white">
+        Página donde iria la informacion del usuario, pero no tengo
+      </StyledText>
+    </StyledView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    // backgroundColor: "#000",
-    // alignItems: "center",
-    // justifyContent: "center",
-    // paddingHorizontal: 12,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+// flex: 1,
+// backgroundColor: "#000",
+// alignItems: "center",
+// justifyContent: "center",
+// paddingHorizontal: 12,
+//   },
+// });

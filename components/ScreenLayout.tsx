@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 import { View } from "react-native";
 
 type ScreenProps = {
@@ -7,8 +7,15 @@ type ScreenProps = {
 
 export function Screen({ children }: ScreenProps) {
   return (
-    <View style={{ flex: 1, backgroundColor: "black", paddingTop: 16, paddingHorizontal: 8 }} >
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "black",
+        paddingTop: 16,
+        paddingHorizontal: 8,
+      }}
+    >
       {children}
     </View>
   );
-} 
+}

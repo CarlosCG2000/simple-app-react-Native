@@ -211,8 +211,5 @@ Si quieres especificarlo tú mismo:
 
 #### 3. `Mejorar` la aplicación...
 
-- Migrar de JavaScript a TypeScript en Expo
+- Migrar de `JavaScript` a `TypeScript` en `Expo`
   `npm install --save-dev typescript @types/react @types/react-native`
-
-- Resto de tareas
-  // Sacar sudadera negra.

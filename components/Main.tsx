@@ -4,11 +4,8 @@ import {
   FlatList,
   View /*, ScrollView*/,
   ActivityIndicator,
-  StyleSheet,
-  Pressable,
 } from "react-native";
-import { getFilms, getFilmsMock } from "../lib/omdbapi";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { getFilms } from "../lib/omdbapi";
 import { AnimatedFilmCard } from "./FilmCard";
 import { Film } from "../class/Film";
 
@@ -16,8 +13,10 @@ export function Main() {
   const [films, setFilms] = useState<Film[]>([]); // Inicializa el estado de films como un array vacío con useState es reactivo
   // const insets = useSafeAreaInsets(); // Obtiene los insets de la barra de estado y la barra de navegación
 
-  useEffect(() => { // Se ejecuta una vez al montar el componente
-    getFilms().then((films) => { // Llama a la función getFilmsMock para obtener los datos de las películas
+  useEffect(() => {
+    // Se ejecuta una vez al montar el componente
+    getFilms().then((films) => {
+      // Llama a la función getFilmsMock para obtener los datos de las películas
       if (films.length === 0) {
         console.error("[Main] No se encontraron películas");
         return;

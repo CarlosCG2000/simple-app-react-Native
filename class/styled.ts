@@ -1,5 +1,12 @@
 import { styled } from "nativewind";
-import { View, Text, Pressable, Image, ScrollView, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  Image,
+  ScrollView,
+  FlatList,
+} from "react-native";
 
 export const StyledView = styled(View);
 export const StyledText = styled(Text);

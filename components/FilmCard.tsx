@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
-import { View, StyleSheet, Text, Image, Animated, Pressable } from "react-native";
+import { StyleSheet, Image, Animated } from "react-native";
 import { Score } from "./Score";
 import { Link } from "expo-router";
-import { styled } from "nativewind";
 import { Film } from "../class/Film";
 import { StyledPressable, StyledText, StyledView } from "../class/styled";
 
@@ -14,14 +13,21 @@ export function FilmCard({ film }: FilmCardProps) {
   return (
     <Link href={`/film/${film.id}`} asChild>
       <StyledPressable className="active:opacity-70 border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4">
-      <StyledView className="flex-row bg-slate.500/10 p-4 rounded-xl gap-4" key={film.id}>
-        <Image source={{ uri: film.poster }} style={styles.image} />
-        <StyledView className="flex-shrink">
-          <StyledText className="mb-2" style={styles.title}>{film.title}</StyledText>
-          <Score score={film.score} maxScore={100} />
-          <StyledText className="mb-2" style={styles.description}>{film.type}</StyledText>
+        <StyledView
+          className="flex-row bg-slate.500/10 p-4 rounded-xl gap-4"
+          key={film.id}
+        >
+          <Image source={{ uri: film.poster }} style={styles.image} />
+          <StyledView className="flex-shrink">
+            <StyledText className="mb-2" style={styles.title}>
+              {film.title}
+            </StyledText>
+            <Score score={film.score} maxScore={100} />
+            <StyledText className="mb-2" style={styles.description}>
+              {film.type}
+            </StyledText>
+          </StyledView>
         </StyledView>
-      </StyledView>
       </StyledPressable>
     </Link>
   );
@@ -32,7 +38,7 @@ type AnimatedFilmCardProps = {
   index: number;
 };
 
-export function AnimatedFilmCard({ film, index }: AnimatedFilmCardProps){
+export function AnimatedFilmCard({ film, index }: AnimatedFilmCardProps) {
   const opacity = useRef(new Animated.Value(0)).current; // Inicializa la opacidad en 0 (es decir transparente)
 
   useEffect(() => {
